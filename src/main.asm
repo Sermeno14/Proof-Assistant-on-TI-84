@@ -3,7 +3,7 @@ include 'include/ez80.inc'
 include 'include/tiformat.inc'
 include 'include/ti84pceg.inc'
 
-format ti archived executable protected program 'INPUT'
+format ti archived executable protected program 'PARITY'
 
 main:
     call ti.ClrLCDFull
