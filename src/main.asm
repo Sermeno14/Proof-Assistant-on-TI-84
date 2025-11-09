@@ -42,7 +42,7 @@ even:
     xor  A,A
     ld   (ti.curUnder), A
     ld   B,(iy+9)
-	ld	 c,(iy+28)				; Still backs up old flag values so StringInput doesn't break screen
+	ld	 c,(iy+28)
 	res	 6,(iy+28)
 	set	 7,(iy+9)
 	push bc
@@ -55,8 +55,22 @@ even:
     jp nz, multt
 
 multt:                          ; Would be the ends of checks because 2k*c would still be true that 2|2kc
-    ld hl, 0                    ; Hoping resetting hl would stop it from crashing
-    call ti.NewLine
+     call ti.NewLine             ; Moves to phase 4
+    ld   hl, inputPrompt
+	ld	 de, ti.ioPrompt
+    ldir
+    xor  A,A
+    ld   (ti.curUnder), A
+    ld   B,(iy+9)
+	ld	 c,(iy+28)				
+	res	 6,(iy+28)
+	set	 7,(iy+9)
+	push bc
+    call ti.GetStringInput
+    pop bc
+    res 4, b
+    
+    call ti.PutS
     ld hl, true
     call ti.PutS
 
