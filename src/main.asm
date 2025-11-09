@@ -91,7 +91,7 @@ multt:                          ; Would be the ends of checks because 2k*c would
 
     ret
     
-odd:
+odd:  ; Still needs to be worked through, same thing with all the jp zn, even/multt things
     call ti.HomeUp              ; Print 2nd phase of function
     ld hl, inputSndP
     call ti.PutS
