@@ -1,4 +1,3 @@
-
 include 'include/ez80.inc'
 include 'include/tiformat.inc'
 include 'include/ti84pceg.inc'
@@ -80,6 +79,3 @@ true:
     db "True", 0 
 false:
     db "False", 0
-
-
-; While not the enter key, let user keep typing.
